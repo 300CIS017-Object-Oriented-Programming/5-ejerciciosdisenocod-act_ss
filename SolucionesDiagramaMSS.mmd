@@ -1,0 +1,36 @@
+
+classDiagram
+class GestorReservas{
+    -list reservas
+
+    +void realizarReserva(Espacio, int)
+    +void cancelarReserva(Espacio)
+    +void liberarReserva(Espacio)
+
+}
+class Espacio{
+    -string tipo
+    -bool disponible
+    -double tarifa
+    -int capacidad
+    -string id
+
+    +bool estaDisponible()
+    +double consultarTarifaHora()
+    +void liberar()
+
+}
+
+
+class Reserva{
+    - Espacio espacio
+    -int duracion
+    
+    +double calcularCosto()
+}
+
+Reserva --> Espacio
+GestorReservas o-- Reserva
+
+
+ 
